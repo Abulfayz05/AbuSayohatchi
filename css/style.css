@@ -1,9 +1,103 @@
+/* Barcha elementlarda box-sizing fix */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --green: #1ec6b6;
   --light-grey: #f7f7f7;
   --dark: #0e1010;
   --trans: all 0.3s ease-in-out;
 }
+
+/* Language switcher */
+.nav-right {
+  margin-left: 20px;
+}
+#languageSwitcher {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Booking form */
+/* Booking form yaxshiroq style */
+.booking-section {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.booking-form {
+  max-width: 750px;   /* kengroq qildik */
+  width: 100%;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* input va textarea style */
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 6px rgba(0,123,255,0.4);
+  outline: none;
+}
+
+/* Button style */
+.booking-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #007BFF, #0056b3);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.booking-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,123,255,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-form {
+    max-width: 100%;
+    padding: 25px;
+    gap: 15px;
+  }
+
+  .nav-right {
+  margin-left: 1px;
+}
+
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -216,7 +310,7 @@ header {
   text-align: center;
 }
 .header-title h1 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   letter-spacing: 2px;
   -webkit-animation: bounce-in-top 1.1s both;
   animation: bounce-in-top 1.1s both;
@@ -354,24 +448,7 @@ header {
   -webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
 }
-.header-form input[type="date"] {
-  text-transform: uppercase;
-}
-.header-form input:not([type="submit"])::-webkit-input-placeholder {
-  color: #fff;
-}
-.header-form input:not([type="submit"])::-moz-placeholder {
-  color: #fff;
-}
-.header-form input:not([type="submit"]):-ms-input-placeholder {
-  color: #fff;
-}
-.header-form input:not([type="submit"])::-ms-input-placeholder {
-  color: #fff;
-}
-.header-form input:not([type="submit"])::placeholder {
-  color: #fff;
-}
+
 ::-webkit-calendar-picker-indicator {
   -webkit-filter: invert(1);
   filter: invert(1);
@@ -379,6 +456,8 @@ header {
 .header-form .btn {
   margin-top: 0.8rem;
 }
+
+
 
 /* change background on scroll */
 .navbar-cng {
@@ -653,10 +732,8 @@ footer .site-brand {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.subscribe-form form input {
-  width: 100%;
-  max-width: 300px;
-}
+
+
 
 .ptext{
     font-size: 14px;
@@ -667,29 +744,7 @@ footer .site-brand {
   -o-transition: var(--trans);
   transition: var(--trans);
 }
-.subscribe-form .form-control:focus {
-  border-color: #fff;
-}
-.subscribe-form form input[type="email"]::-webkit-input-placeholder {
-  color: #fff;
-  opacity: 0.3;
-}
-.subscribe-form form input[type="email"]::-moz-placeholder {
-  color: #fff;
-  opacity: 0.3;
-}
-.subscribe-form form input[type="email"]:-ms-input-placeholder {
-  color: #fff;
-  opacity: 0.3;
-}
-.subscribe-form form input[type="email"]::-ms-input-placeholder {
-  color: #fff;
-  opacity: 0.3;
-}
-.subscribe-form form input[type="email"]::placeholder {
-  color: #fff;
-  opacity: 0.3;
-}
+
 
 /* ### GALLERY PAGE ### */
 header.header-sm {

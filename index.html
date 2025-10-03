@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Abu Sayohatchi Travel - Ichki turizm</title>
+    <title data-i18n="site_title">Abu Sayohatchi Travel - Ichki turizm</title>
     <meta
       name="description"
       content="Abu Sayohatchi Travel - Ichki turizm turlarni tashkil qilish agentligi Zomin , Aydarko'l , Baxmalga sayohatlar tashkil qilamiz"
+      data-i18n="meta_description"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="images/favico.png" />
@@ -14,66 +15,33 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
 
     <script>
       var now = new Date().getTime();
-      document.write(
-        '<link href="css/style.css?v=' +
-          now +
-          '" rel="stylesheet" type="text/css"/>'
-      );
+      document.write('<link href="css/style.css?v=' + now + '" rel="stylesheet"/>');
+      document.write('<link href="css/modal.css?v=' + now + '" rel="stylesheet"/>');
+      document.write('<link href="css/normalize.css?v=' + now + '" rel="stylesheet"/>');
+      document.write('<link href="css/responsive.css?v=' + now + '" rel="stylesheet"/>');
+      document.write('<link href="css/utility.css?v=' + now + '" rel="stylesheet"/>');
+      document.write('<link href="font/fonts.css?v=' + now + '" rel="stylesheet"/>');
     </script>
 
-    <script>
-      var now = new Date().getTime();
-      document.write(
-        '<link href="css/modal.css?v=' +
-          now +
-          '" rel="stylesheet" type="text/css"/>'
-      );
-    </script>
-    <script>
-      var now = new Date().getTime();
-      document.write(
-        '<link href="css/normalize.css?v=' +
-          now +
-          '" rel="stylesheet" type="text/css"/>'
-      );
-    </script>
-    <script>
-      var now = new Date().getTime();
-      document.write(
-        '<link href="css/responsive.css?v=' +
-          now +
-          '" rel="stylesheet" type="text/css"/>'
-      );
-    </script>
-    <script>
-      var now = new Date().getTime();
-      document.write(
-        '<link href="css/utility.css?v=' +
-          now +
-          '" rel="stylesheet" type="text/css"/>'
-      );
-    </script>
-    <script>
-      var now = new Date().getTime();
-      document.write(
-        '<link href="font/fonts.css?v=' +
-          now +
-          '" rel="stylesheet" type="text/css"/>'
-      );
-    </script>
+
+
   </head>
   <body>
     <!-- navbar  -->
     <nav class="navbar">
       <div class="container flex">
-        <a href="index.html" class="site-brand"> AbuSayohatchi<span>Travel</span> </a>
+        <a href="index.html" class="site-brand">
+          AbuSayohatchi<span>Travel</span>
+        </a>
+
+        <!-- language selector -->
+    
 
         <button type="button" id="navbar-show-btn" class="flex">
           <i class="fas fa-bars"></i>
@@ -84,199 +52,150 @@
           </button>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="/" class="nav-link">Bosh sahifa</a>
+              <a href="/" class="nav-link" data-i18n="nav_home">Bosh sahifa</a>
             </li>
             <li class="nav-item">
-              <a href="#about" class="nav-link">Biz xaqimizda</a>
+              <a href="#about" class="nav-link" data-i18n="nav_about">Biz haqimizda</a>
             </li>
             <li class="nav-item">
-              <a href="#services" class="nav-link">Xizmatlar</a>
+              <a href="#services" class="nav-link" data-i18n="nav_services">Xizmatlar</a>
             </li>
-
             <li class="nav-item">
-              <a href="#footer" class="nav-link">Bog'lanish</a>
+              <a href="#footer" class="nav-link" data-i18n="nav_contact">Bog'lanish</a>
             </li>
           </ul>
         </div>
+          <div class="nav-right">
+      <select id="languageSwitcher">
+        <option value="uz">UZ</option>
+        <option value="en">EN</option>
+        <option value="ru">RU</option>
+      </select>
+    </div>
       </div>
     </nav>
     <!-- end of navbar  -->
 
-    <!-- header -->
-    <header class="flex">
-      <div class="container">
-        <div class="header-title">
-          <h1>O'zbekiston bo'ylab biz bilan sayohat qiling</h1>
-        </div>
-      </div>
-    </header>
-    <!-- header -->
+   <!-- header -->
+<header class="flex">
+  <div class="container">
+    <div class="header-title">
+      <h1 data-i18n="header_title">O'zbekiston bo'ylab biz bilan sayohat qiling</h1>
+    </div>
 
-    <!-- Modal section  Zomin-->
+    <!-- Booking Form -->
+ <!-- Booking Form -->
+<section id="booking" class="booking-section">
+  <div class="container">
+    <h2 data-i18n="booking_title">Bron qilish</h2>
+    <form id="bookingForm" class="booking-form">
+      <input type="text" name="name" data-i18n-placeholder="form_name" placeholder="Ismingiz" required>
+      <input type="tel" name="phone" data-i18n-placeholder="form_phone" placeholder="Telefon raqam" required>
+      <input type="email" name="email" data-i18n-placeholder="form_email" placeholder="Email" required>
+      <textarea name="message" data-i18n-placeholder="form_message" placeholder="Izoh" required></textarea>
+      <button type="submit" data-i18n="form_submit">Yuborish</button>
+    </form>
+   <p id="form-status"></p>
+  </div>
+</section>
+
+    <!-- End Booking Form -->
+
+  </div>
+</header>
+<!-- header -->
+
+
+    <!-- ===================== MODALS ===================== -->
+    <!-- Example for Zomin -->
     <div class="modal-bg1">
       <div class="modal">
-        <span class="modal-close1">
-          <i class="fas fa-times"></i>
-        </span>
-        <h2>
-          Abu Sayohatchi Travel kompaniyasi bilan O'zbekiston bo'ylab arzon va oson sayohat
-          qiling!
-        </h2>
-        <h4>
-          Shovqinli Aydarko'l va Zomin tog' archazorlariga 2 kunlik sayohat
-        </h4>
-        <h4>Ikki kunlik sayohatning 1 kishi uchun narxlari:</h4>
- 
-
-        <h4>
-          Biz bilan sayohatingiz ancha arzon va oson bo'ladi. Sayohatga joy bron
-          qilish uchun hoziroq qo'ng'iroq qiling
-        </h4>
+        <span class="modal-close1"><i class="fas fa-times"></i></span>
+        <h2 data-i18n="modal_title"></h2>
+        <h4 data-i18n="zomin_desc"></h4>
+        <h4 data-i18n="modal_price"></h4>
+        <h4 data-i18n="modal_info"></h4>
         <div style="text-align: center">
-          <a href="tel:+998944499988">
-            <i class="fas fa-phone-alt"></i> +99894 449 99 88</a
-          >
+          <a href="tel:+998944499988"><i class="fas fa-phone-alt"></i> +99894 449 99 88</a>
         </div>
       </div>
     </div>
 
-    <!-- Modal section  Aydarkol-->
+    <!-- Repeat for each place -->
     <div class="modal-bg2">
       <div class="modal">
-        <span class="modal-close2">
-          <i class="fas fa-times"></i>
-        </span>
-        <h2>
-          Abu Sayohatchi Travel kompaniyasi bilan O'zbekiston bo'ylab arzon va oson sayohat
-          qiling!
-        </h2>
-        <h4>Aydarkol</h4>
-        <h4>Ikki kunlik sayohatning 1 kishi uchun narxlari:</h4>
- 
-
-        <h4>
-          Biz bilan sayohatingiz ancha arzon va oson bo'ladi. Sayohatga joy bron
-          qilish uchun hoziroq qo'ng'iroq qiling
-        </h4>
+        <span class="modal-close2"><i class="fas fa-times"></i></span>
+        <h2 data-i18n="modal_title"></h2>
+        <h4 data-i18n="aydarkol_desc"></h4>
+        <h4 data-i18n="modal_price"></h4>
+        <h4 data-i18n="modal_info"></h4>
         <div style="text-align: center">
-          <a href="tel:+998944499988">
-            <i class="fas fa-phone-alt"></i> +99894 449 99 88</a
-          >
+          <a href="tel:+998944499988"><i class="fas fa-phone-alt"></i> +99894 449 99 88</a>
         </div>
       </div>
     </div>
 
-        <!-- Modal section  Amirsoy-->
-        <div class="modal-bg3">
-          <div class="modal">
-            <span class="modal-close3">
-              <i class="fas fa-times"></i>
-            </span>
-            <h2>
-              Abu Sayohatchi Travel kompaniyasi bilan O'zbekiston bo'ylab arzon va oson sayohat
-              qiling!
-            </h2>
-            <h4>Amirsoy</h4>
-            <h4>Ikki kunlik sayohatning 1 kishi uchun narxlari:</h4>
- 
-    
-            <h4>
-              Biz bilan sayohatingiz ancha arzon va oson bo'ladi. Sayohatga joy bron
-              qilish uchun hoziroq qo'ng'iroq qiling
-            </h4>
-            <div style="text-align: center">
-              <a href="tel:+998944499988">
-                <i class="fas fa-phone-alt"></i> +99894 449 99 88</a
-              >
-            </div>
-          </div>
+    <!-- Amirsoy -->
+    <div class="modal-bg3">
+      <div class="modal">
+        <span class="modal-close3"><i class="fas fa-times"></i></span>
+        <h2 data-i18n="modal_title"></h2>
+        <h4 data-i18n="amirsoy_desc"></h4>
+        <h4 data-i18n="modal_price"></h4>
+        <h4 data-i18n="modal_info"></h4>
+        <div style="text-align: center">
+          <a href="tel:+998944499988"><i class="fas fa-phone-alt"></i> +99894 449 99 88</a>
         </div>
+      </div>
+    </div>
 
-            <!-- Modal section  Baxmal-->
+    <!-- Baxmal -->
     <div class="modal-bg4">
       <div class="modal">
-        <span class="modal-close4">
-          <i class="fas fa-times"></i>
-        </span>
-        <h2>
-          Abu Sayohatchi Travel kompaniyasi bilan O'zbekiston bo'ylab arzon va oson sayohat
-          qiling!
-        </h2>
-        <h4>
-          Shovqinli Aydarko'l va Zomin tog' archazorlariga 2 kunlik sayohat
-        </h4>
-        <h4>Ikki kunlik sayohatning 1 kishi uchun narxlari:</h4>
- 
-
-        <h4>
-          Biz bilan sayohatingiz ancha arzon va oson bo'ladi. Sayohatga joy bron
-          qilish uchun hoziroq qo'ng'iroq qiling
-        </h4>
+        <span class="modal-close4"><i class="fas fa-times"></i></span>
+        <h2 data-i18n="modal_title"></h2>
+        <h4 data-i18n="baxmal_desc"></h4>
+        <h4 data-i18n="modal_price"></h4>
+        <h4 data-i18n="modal_info"></h4>
         <div style="text-align: center">
-          <a href="tel:+998944499988">
-            <i class="fas fa-phone-alt"></i> +99894 449 99 88</a
-          >
+          <a href="tel:+998944499988"><i class="fas fa-phone-alt"></i> +99894 449 99 88</a>
         </div>
       </div>
     </div>
 
-    <!-- Modal section  Temur darvoza-->
+    <!-- Temur Gate -->
     <div class="modal-bg5">
       <div class="modal">
-        <span class="modal-close5">
-          <i class="fas fa-times"></i>
-        </span>
-        <h2>
-          Abu Sayohatchi Travel kompaniyasi bilan O'zbekiston bo'ylab arzon va oson sayohat
-          qiling!
-        </h2>
-        <h4>Aydarkol</h4>
-        <h4>Ikki kunlik sayohatning 1 kishi uchun narxlari:</h4>
- 
-
-        <h4>
-          Biz bilan sayohatingiz ancha arzon va oson bo'ladi. Sayohatga joy bron
-          qilish uchun hoziroq qo'ng'iroq qiling
-        </h4>
+        <span class="modal-close5"><i class="fas fa-times"></i></span>
+        <h2 data-i18n="modal_title"></h2>
+        <h4 data-i18n="temur_desc"></h4>
+        <h4 data-i18n="modal_price"></h4>
+        <h4 data-i18n="modal_info"></h4>
         <div style="text-align: center">
-          <a href="tel:+998944499988">
-            <i class="fas fa-phone-alt"></i> +99894 449 99 88</a
-          >
+          <a href="tel:+998944499988"><i class="fas fa-phone-alt"></i> +99894 449 99 88</a>
         </div>
       </div>
     </div>
 
-        <!-- Modal section  Said ibn vaqqos-->
-        <div class="modal-bg6">
-          <div class="modal">
-            <span class="modal-close6">
-              <i class="fas fa-times"></i>
-            </span>
-            <h2>
-              Abu Sayohatchi Travel kompaniyasi bilan O'zbekiston bo'ylab arzon va oson sayohat
-              qiling!
-            </h2>
-            <h4>Amirsoy</h4>
-            <h4>Ikki kunlik sayohatning 1 kishi uchun narxlari:</h4>
- 
-    
-            <h4>
-              Biz bilan sayohatingiz ancha arzon va oson bo'ladi. Sayohatga joy bron
-              qilish uchun hoziroq qo'ng'iroq qiling
-            </h4>
-            <div style="text-align: center">
-              <a href="tel:+998944499988">
-                <i class="fas fa-phone-alt"></i> +99894 449 99 88</a
-              >
-            </div>
-          </div>
+    <!-- Said ibn Vaqqos -->
+    <div class="modal-bg6">
+      <div class="modal">
+        <span class="modal-close6"><i class="fas fa-times"></i></span>
+        <h2 data-i18n="modal_title"></h2>
+        <h4 data-i18n="said_desc"></h4>
+        <h4 data-i18n="modal_price"></h4>
+        <h4 data-i18n="modal_info"></h4>
+        <div style="text-align: center">
+          <a href="tel:+998944499988"><i class="fas fa-phone-alt"></i> +99894 449 99 88</a>
         </div>
+      </div>
+    </div>
 
-    <!-- featured section -->
+    <!-- ===================== FEATURED ===================== -->
     <section id="featured" class="py-4">
       <div class="container">
         <div class="title-wrap">
-          <h2 class="lg-title">qayerga boramiz ?</h2>
+          <h2 class="lg-title" data-i18n="featured_title">Qayerga boramiz?</h2>
         </div>
 
         <div class="featured-row">
@@ -284,11 +203,7 @@
             <span class="modal-btn1">
               <img src="images/zamin-1.jpg" alt="featured place" />
               <div class="featured-item-content">
-                <span>
-                  <i class="fas fa-map-marker-alt"></i>
-                  Zomin milliy bog'i
-                </span>
-            
+                <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="zomin_name">Zomin milliy bog'i</span></span>
               </div>
             </span>
           </div>
@@ -297,40 +212,25 @@
             <span class="modal-btn2">
               <img src="images/kul.jpg" alt="featured place" />
               <div class="featured-item-content">
-                <span>
-                  <i class="fas fa-map-marker-alt"></i>
-                  Ayrdar-Arnasoy ko'li
-                </span>
-             
+                <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="aydarkol_name">Aydarko‘l</span></span>
               </div>
             </span>
-        
           </div>
 
           <div class="featured-item my-2 shadow">
-
             <span class="modal-btn3">
               <img src="images/amirsoy.jpg" alt="featured place" />
               <div class="featured-item-content">
-                <span>
-                  <i class="fas fa-map-marker-alt"></i>
-                  Amirsoy, Toshkent
-                </span>
-             
+                <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="amirsoy_name">Amirsoy</span></span>
               </div>
             </span>
-  
           </div>
 
           <div class="featured-item my-2 shadow">
             <span class="modal-btn4">
               <img src="images/baxmal toglari.jpg" alt="featured place" />
               <div class="featured-item-content">
-                <span>
-                  <i class="fas fa-map-marker-alt"></i>
-                  Baxmal Tog'lari
-                </span>
-             
+                <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="baxmal_name">Baxmal tog‘lari</span></span>
               </div>
             </span>
           </div>
@@ -339,229 +239,167 @@
             <span class="modal-btn5">
               <img src="images/temirdarvoza.jpg" alt="featured place" />
               <div class="featured-item-content">
-                <span>
-                  <i class="fas fa-map-marker-alt"></i>
-                  Amir Temur darvozasi
-                </span>
-             
+                <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="temur_name">Amir Temur darvozasi</span></span>
               </div>
             </span>
-  
-         
           </div>
 
           <div class="featured-item my-2 shadow">
             <span class="modal-btn6">
               <img src="images/said.jpg" alt="featured place" />
               <div class="featured-item-content">
-                <span>
-                  <i class="fas fa-map-marker-alt"></i>
-                  Said ibn Abu Vaqqos majmuasi
-                </span>
-             
+                <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="said_name">Said ibn Abu Vaqqos</span></span>
               </div>
             </span>
-       
           </div>
         </div>
       </div>
     </section>
 
-    <!-- featured section -->
+    <!-- ===================== ABOUT ===================== -->
     <section id="about" class="py-4">
       <div class="container">
         <div class="title-wrap">
-          <h2 class="lg-title">biz haqimizda</h2>
-          <h3 class="aboutparag">"Abu Sayohatchi Travel" kompaniyasi mahalliy va xorijiy turistlar uchun  Jizzax viloyatidagi dam olish maskanlari, mashhur tarixiy ob'ektlari
-            va ma'daniy me'roslariga sayohatlar va turlar tashkil etish xizmatlarini ko'rsatadi.<br/>
-            <span>Xizmatlarimiz tez va ishonchli.</span> </h3>
+          <h2 class="lg-title" data-i18n="about_title">Biz haqimizda</h2>
+          <h3 class="aboutparag" data-i18n="about_text">
+            "Abu Sayohatchi Travel" kompaniyasi mahalliy va xorijiy turistlar uchun sayohatlar
+            tashkil etadi.
+          </h3>
         </div>
       </div>
     </section>
-    <!-- end of featured section -->
 
-    <!-- services section -->
+    <!-- ===================== SERVICES ===================== -->
+
+     <div class="modal-bg">
+    <div class="modal">
+      <span class="modal-close"><i class="fas fa-times"></i></span>
+
+      <h2 data-i18n="modal_title">Abu Sayohatchi Travel kompaniyasi bilan O'zbekiston bo'ylab arzon va oson sayohat qiling!</h2>
+      <h4 data-i18n="zomin_desc">Shovqinli Aydarko'l va Zomin tog' archazorlariga 2 kunlik sayohat</h4>
+      <h4 data-i18n="modal_price">Ikki kunlik sayohatning 1 kishi uchun narxlari:</h4>
+
+      <ul>
+        <li data-i18n="price_andijan">Andijondan - 89$</li>
+        <li data-i18n="price_fergana">Farg'ondan - 89$</li>
+        <li data-i18n="price_namangan">Namangandan - 87$</li>
+        <li data-i18n="price_tashkent">Toshkentdan - 75$</li>
+      </ul>
+
+      <h4 data-i18n="modal_info">Biz bilan sayohatingiz ancha arzon va oson bo‘ladi. Sayohatga joy bron qilish uchun hoziroq qo'ng'iroq qiling</h4>
+
+      <ul>
+        <li data-i18n="include_transport">Ikki kun davomida barcha transport xizmatlari</li>
+        <li data-i18n="include_food">Ikki kun davomida ovqatlanish (Aydarko'l balig'i + Jizzax somsasi)</li>
+        <li data-i18n="include_camping">Sohil bo'yida kemping to'lovlari</li>
+        <li data-i18n="include_reserve">Zomin davlat qo‘riqxonasiga kirish</li>
+        <li data-i18n="include_tours">Qiziqarli turlar va ekskursiyalar</li>
+      </ul>
+
+      <div style="text-align:center">
+        <a href="tel:+998944499988"><i class="fas fa-phone-alt"></i> +99894 449 99 88</a>
+      </div>
+    </div>
+  </div>
     <section id="services" class="py-4">
       <div class="container">
         <div class="title-wrap">
-          <h2 class="lg-title">Bizning xizmatlarimiz</h2>
+          <h2 class="lg-title" data-i18n="services_title">Bizning xizmatlarimiz</h2>
         </div>
 
         <div class="services-row">
           <div class="services-item">
-            <a href="https://hostelAbu Sayohatchi Travel.uz/">
-              <span class="services-icon">
-                <i class="fas fa-hotel"></i>
-              </span>
-              <h3>Mehmonxona</h3>
+            <a href="#">
+              <span class="services-icon"><i class="fas fa-hotel"></i></span>
+              <h3 data-i18n="service_hotel">Mehmonxona</h3>
             </a>
           </div>
 
           <div class="services-item">
             <span class="modal-btn">
-              <span class="services-icon">
-                <i class="fas fa-map-marked-alt"></i>
-              </span>
-              <h3>O'zbekiston bo'ylab turlar</h3>
+              <span class="services-icon"><i class="fas fa-map-marked-alt"></i></span>
+              <h3 data-i18n="service_tours">O'zbekiston bo'ylab turlar</h3>
             </span>
-
-            <!--<a href="#" class="btn">Ba'tafsil</a>-->
-          </div>
-
-          <div class="modal-bg">
-            <div class="modal">
-              <span class="modal-close">
-                <i class="fas fa-times"></i>
-              </span>
-              <h2>
-                Abu Sayohatchi Travel kompaniyasi bilan O'zbekiston bo'ylab arzon va oson
-                sayohat qiling!
-              </h2>
-              <h4>
-                Shovqinli Aydarko'l va Zomin tog' archazorlariga 2 kunlik
-                sayohat
-              </h4>
-              <h4>Ikki kunlik sayohatning 1 kishi uchun narxlari:</h4>
-              <ul>
-                <li><i class="far fa-map"></i> Andijondan - 89$</li>
-                <li><i class="far fa-map"></i> Farg'ondan - 89$</li>
-                <li><i class="far fa-map"></i> Namangandan - 87$</li>
-                <li><i class="far fa-map"></i> Toshkentdan - 75$</li>
-                <li><i class="far fa-map"></i> Buxorodan - 89$</li>
-                <li><i class="far fa-map"></i> Samarqandan - 84$</li>
-                <li><i class="far fa-map"></i> Jizzaxdan- 50$</li>
-                <li><i class="far fa-map"></i> Sirdaryodan - 60$$</li>
-                <li><i class="far fa-map"></i> Qashqadaryodan - 84$</li>
-                <li><i class="far fa-map"></i> Surxondaryodan - 89$</li>
-              </ul>
-              <h4>Narx ichiga quydagilar kiradi:</h4>
-              <ul>
-                <li>
-                  <i class="far fa-check-circle"></i> Ikki kun davomida barcha
-                  transport xizmatlari
-                </li>
-                <li>
-                  <i class="far fa-check-circle"></i> Ikki kun davomida
-                  kaloriyali ovqatlanish (Aydarko'l balig'i + Jizzax somsasi)
-                </li>
-                <li>
-                  <i class="far fa-check-circle"></i> Sohil bo'yidan kemping
-                  to'lovlari
-                </li>
-                <li>
-                  <i class="far fa-check-circle"></i> Zomin davlat
-                  qo'riqxonasiga kirish davlat boji
-                </li>
-                <li>
-                  <i class="far fa-check-circle"></i> Qiziqarli va esda qolarli
-                  turlar tashkil etish
-                </li>
-                <li><i class="far fa-check-circle"></i> Andijon muzqaymog'i</li>
-                <li><i class="far fa-check-circle"></i> Suv ta'minoti</li>
-              </ul>
-              <h4>
-                Biz bilan sayohatingiz ancha arzon va oson bo'ladi. Sayohatga
-                joy bron qilish uchun hoziroq qo'ng'iroq qiling
-              </h4>
-              <div style="text-align: center">
-                <a href="tel:+998944499988">
-                  <i class="fas fa-phone-alt"></i> +99894 449 99 88</a
-                >
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- footer -->
+    <!-- ===================== FOOTER ===================== -->
     <section id="footer">
       <footer class="py-4">
         <div class="container footer-row">
           <div class="footer-item">
-            <a href="index.html" class="site-brand">
-              Sayohat<span>chi</span>
-            </a>
-            <p class="text">
-              O'zbekiston bo'ylab turlarni tashkil qilish bo'yicha xizmat
-              ko'rsatamiz
-            </p>
-            <p class="text">
-              Manzil: Jizzax viloyati Jizzax shahri Olmazor ko'chasi 23 -uy
-            </p>
-
-            <p class="ptext">Litsenziya: № 04.0120 2021 yil 06 sentabr</p>
-            <p class="ptext">Guvohnoma: № 1033647 2021 yil 06 sentabr</p>
+            <a href="index.html" class="site-brand">Sayohat<span>chi</span></a>
+            <p class="text" data-i18n="footer_desc1">O'zbekiston bo'ylab turlarni tashkil qilamiz</p>
+            <p class="text" data-i18n="footer_address">Manzil: Jizzax, Olmazor ko'chasi 23</p>
+            <p class="ptext" data-i18n="footer_license">Litsenziya: № 04.0120 2021 yil</p>
+            <p class="ptext" data-i18n="footer_certificate">Guvohnoma: № 1033647</p>
           </div>
 
           <div class="footer-item">
-            <h2>Bizni kuzatib boring:</h2>
+            <h2 data-i18n="footer_follow">Bizni kuzatib boring:</h2>
             <ul class="social-links">
-              <li>
-                <a href="https://t.me/SayohatchiAbu">
-                  <i class="fab fa-telegram"></i>
-                </a>
-              </li>
-         
-              <li>
-                <a href="https://www.instagram.com/sayohatchi_abu/">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/@SayohatchiAbu">
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </li>
+              <li><a href="https://t.me/SayohatchiAbu"><i class="fab fa-telegram"></i></a></li>
+              <li><a href="https://www.instagram.com/sayohatchi_abu/"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/@SayohatchiAbu"><i class="fab fa-youtube"></i></a></li>
             </ul>
           </div>
 
           <div class="footer-item">
-            <h2>Mashhur joylar:</h2>
+            <h2 data-i18n="footer_places">Mashhur joylar:</h2>
             <ul>
-              <li><a href="#featured">Zomin</a></li>
-              <li><a href="#featured">Ayrdar-Arnasoy</a></li>
-              <li><a href="#featured">Baxmal tog'lari</a></li>
-              <li><a href="#featured">Amirsoy</a></li>
-              <li><a href="#featured">Amir Temur Darvozasi</a></li>
+              <li><a href="#featured" data-i18n="zomin_name">Zomin</a></li>
+              <li><a href="#featured" data-i18n="aydarkol_name">Aydarkol</a></li>
+              <li><a href="#featured" data-i18n="baxmal_name">Baxmal</a></li>
+              <li><a href="#featured" data-i18n="amirsoy_name">Amirsoy</a></li>
+              <li><a href="#featured" data-i18n="temur_name">Temur darvozasi</a></li>
             </ul>
           </div>
+
           <div class="footer-item">
-            <h2>Bog'lanish:</h2>
+            <h2 data-i18n="footer_contact">Bog'lanish:</h2>
             <ul>
-              <li>
-                <a href="tel:+998944499988"
-                  ><i class="fas fa-phone-alt"></i> +998(94) 449 99 98 </a
-                >
-              </li>
-              <li>
-                <a href="mailto:hostelsayohatchi@gmail.com Sayohatchi Travel@gmail.com" class="mailto"
-                  ><i class="fas fa-envelope"></i> hostelsayohatchi@gmail.com</a
-                >
-              </li>
+              <li><a href="tel:+998944499988"><i class="fas fa-phone-alt"></i> +998(94) 449 99 98</a></li>
+              <li><a href="mailto:hostelsayohatchi@gmail.com"><i class="fas fa-envelope"></i> hostelsayohatchi@gmail.com</a></li>
             </ul>
           </div>
         </div>
       </footer>
     </section>
 
-    <!-- end of footer -->
+    <!-- scripts -->
+        <!-- EmailJS -->
 
-    <!-- js -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  let currentLang = localStorage.getItem("lang") || "uz";
+
+  emailjs.init("731nvUEmgJQpkLIP9"); // EmailJS public key
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("bookingForm");
+    const statusEl = document.getElementById("form-status");
+
+    if(form && statusEl) {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault(); // 🔹 sahifa yangilanishini oldini oladi
+
+        emailjs.sendForm("service_6evvc0q", "template_72ofcf8", this)
+          .then(() => {
+            statusEl.innerText = translations[currentLang].form_success;
+            this.reset();
+          })
+          .catch((err) => {
+            statusEl.innerText = translations[currentLang].form_error;
+            console.error(err);
+          });
+      });
+    }
+  });
+</script>
     <script src="js/script.js"></script>
     <script src="js/modal.js"></script>
-    <script>
-      // var modalBtn = document.querySelector(".modal-btn");
-      // var modalBg = document.querySelector(".modal-bg");
-      // var modalClose = document.querySelector(".modal-close");
-
-      // modalBtn.addEventListener("click", function () {
-      //   modalBg.classList.add("bg-active");
-      // });
-
-      // modalClose.addEventListener("click", function () {
-      //   modalBg.classList.remove("bg-active");
-      // });
-    </script>
+    <script src="js/translations.js"></script>
   </body>
 </html>
